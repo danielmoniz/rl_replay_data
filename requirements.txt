@@ -1,0 +1,6 @@
+carball
+numpy
+pandas
+matplotlib
+tensorflow
+tensorflow-gpu
