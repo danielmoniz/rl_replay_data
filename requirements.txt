@@ -3,3 +3,5 @@ numpy
 pandas
 matplotlib
 tensorflow
+notebook
+jupyter_http_over_ws
