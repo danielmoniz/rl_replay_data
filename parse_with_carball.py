@@ -3,7 +3,7 @@ import os
 import carball
 
 input_path = "./replay_files/1v1s/"
-output_path = "./parsed_replays/1v1s/"
+output_path = "./parsed_replays/"
 
 print(f"Taking replays from {input_path}")
 print(f"Saving replay data into {output_path}")
