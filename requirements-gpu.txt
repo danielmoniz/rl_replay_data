@@ -1,7 +1,0 @@
-carball
-numpy
-pandas
-matplotlib
-tensorflow-gpu==1.15.2
-notebook
-jupyter_http_over_ws
