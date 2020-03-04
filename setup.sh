@@ -1,3 +1,8 @@
+# first time only: ---
+# pyenv install 3.6.8
+# pip install virtualenv
+# virtualenv env
+
 source env/bin/activate # *nix
 source env/Scripts/activate # Windows
 
