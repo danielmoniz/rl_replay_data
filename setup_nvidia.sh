@@ -7,3 +7,5 @@ curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.li
 sudo apt-get update && sudo apt-get install -y nvidia-container-toolkit
 sudo systemctl restart docker
 
+docker pull tensorflow/tensorflow:2.0.0-gpu-py3
+
