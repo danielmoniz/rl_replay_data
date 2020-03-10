@@ -1,0 +1,8 @@
+version: "3.7"
+services:
+
+    tf-gpu:
+        image: tensorflow/tensorflow:2.0.1-gpu-py3-jupyter
+        ports:
+            - "8888:8888"
+        # gpus: "all"
