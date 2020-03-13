@@ -33,3 +33,11 @@ This should parse your replays into a new directory called `./parsed_replays/1v1
 Then run the Google Colaboratory notebook and connect to a local runtime:
 
 https://colab.research.google.com/drive/1_Gl0aMOtyUdjNfHsU_rLydfDkb0NfKdf
+
+
+# NOTE (temporary)
+To run Tensorflow with a GPU:
+```bash
+docker build . --tag gpu-test
+docker run --gpus all -p 8888:8888 -v /data -e VIRTUAL_ENV=./env -e PATH="$VIRTUAL_ENV/bin:$PATH" gpu-test
+```
