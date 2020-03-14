@@ -1,3 +1,3 @@
+#!/bin/bash
 
-docker run --gpus all tensorflow/tensorflow:2.0.1-gpu-py3-jupyter nvidia-smi
-docker run -u $(id -u):$(id -g) --gpus all --name tf-gpu tensorflow/tensorflow:2.0.1-gpu-py3-jupyter
+docker run --rm -u $(id -u):$(id -g) --gpus all -p 8888:8888 -v $(pwd):/tf/project rl-replays-gpu
