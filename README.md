@@ -38,6 +38,6 @@ https://colab.research.google.com/drive/1_Gl0aMOtyUdjNfHsU_rLydfDkb0NfKdf
 # NOTE (temporary)
 To run Tensorflow with a GPU:
 ```bash
-docker build . --tag gpu-test
-docker run --gpus all -p 8888:8888 -v /data -e VIRTUAL_ENV=./env -e PATH="$VIRTUAL_ENV/bin:$PATH" gpu-test
+docker build . --tag rl-replays-gpu
+docker run --name rl-replays -u $(id -u):$(id -g) --gpus all -p 8888:8888 -v $(pwd):/tf/project rl-replays-gpu
 ```

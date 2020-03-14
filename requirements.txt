@@ -2,8 +2,5 @@ carball
 numpy
 pandas
 matplotlib
-# tensorflow==2.0
 notebook
 jupyter_http_over_ws
-git+https://github.com/docker/docker-py@refs/pull/2471/head
-git+https://github.com/docker/compose@refs/pull/7124/head
