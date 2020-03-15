@@ -41,6 +41,8 @@ To start the Jupyter notebook, simply run:
 
 Open the URL provided by the terminal to open the notebook and begin!
 
+Note that if the Jupyter notebook does not have access to a GPU, there may still be one line of setup to complete (unconfirmed). Try running `./setup_nvidia.sh` to install the [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-docker).
+
 ### Manual (virtualenv, not recommended)
 
 You should additionally [install Tensorflow 2](https://www.tensorflow.org/install/gpu), following instructions for GPU support.
