@@ -82,3 +82,7 @@ docker run --gpus all nvidia/cuda:10.0-base nvidia-smi
 It should output information about your GPU, including a driver version, CUDA version, and hardware info (eg. GeForce GTX 1080).
 
 Note that the Jupyter notebook being run should also have a GPU test to confirm whether or not Tensorflow has access to a GPU.
+
+## Installing CUDA manually (not recommended)
+
+Another option is to install CUDA manually in order for Tensorflow to be able to make use of your GPU. See, and run, `./install_cuda.sh` for a starting point. Please note that this script is not complete. Installing CUDA is difficult and error prone, and I highly recommend the Docker approach (for Linux).
