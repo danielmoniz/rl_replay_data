@@ -68,3 +68,15 @@ jupyter notebook
 You can then use the Jupyter notebook that should have opened to navigate to the `build_model_relative.ipynb` file and begin!
 
 Optionally, a Jupyter Colab can be used to connect to the given URL. This is not recommended.
+
+## Check for GPU compatibility
+
+To ensure your machine is able to detect a GPU, try running:
+
+```bash
+docker run --gpus all nvidia/cuda:10.0-base nvidia-smi
+```
+
+It should output information about your GPU, including a driver version, CUDA version, and hardware info (eg. GeForce GTX 1080).
+
+Note that the Jupyter notebook being run should also have a GPU test to confirm whether or not Tensorflow has access to a GPU.
