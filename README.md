@@ -15,7 +15,7 @@ python parse_with_carball.sh
 
 This should parse your replays into a new directory called `./parsed_replays/1v1s/`. You can check that this worked by ensuring you have `.json` files in that directory.
 
-## Setup
+## Docker or Virtualenv
 
 This project can either be set up by using Docker (recommended) or manually by using virtualenv. GPU functionality comes with the Docker approach by default. The manual approach will rely on your CPU unless you undergo the (arduous) process of setting up CUDA on your machine. If setting up manually, you should additionally [install Tensorflow 2](https://www.tensorflow.org/install/gpu), following instructions for GPU support.
 
