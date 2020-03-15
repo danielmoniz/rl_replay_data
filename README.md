@@ -1,15 +1,6 @@
 # rl_replay_data
 Replay data for Rocket League
 
-## Setup
-
-Please use Python 3.6 at the latest. You can specify which Python version to use when making a virtualenv with the `--python=path/to/python` argument.
-
-```bash
-virtualenv env
-./setup.sh
-```
-
 ## Parse replays
 
 Replays needs to be parsed into a JSON format. You can find replays wherever you like, including at ballchasing.com. There is a zip containing replays from RLCS 7. These should be unzipped if they are to be used.
@@ -24,12 +15,74 @@ python parse_with_carball.sh
 
 This should parse your replays into a new directory called `./parsed_replays/1v1s/`. You can check that this worked by ensuring you have `.json` files in that directory.
 
-## Run
+## Docker or Virtualenv
+
+This project can either be set up by using Docker (recommended) or manually by using virtualenv. GPU functionality comes with the Docker approach by default. The manual approach will rely on your CPU unless you undergo the (arduous) process of setting up CUDA on your machine. If setting up manually, you should additionally [install Tensorflow 2](https://www.tensorflow.org/install/gpu), following instructions for GPU support.
+
+### Automatic (Docker w/ GPU)
+
+First, a Docker image should be built, which will contain the relevant Python version, Tensorflow, and all other requirements. Then a Docker container needs to be run and the Jupyter notebook opened.
+
+#### Build
+
+This process creates a new Docker image called `rl-replays-gpu` from the provided Dockerfile. The need only be run once. This will also install all dependencies from requirements.txt.
 
 ```bash
-./jupyter_colab.sh
+./build.sh
 ```
 
-Then run the Google Colaboratory notebook and connect to a local runtime:
+#### Run
 
-https://colab.research.google.com/drive/1_Gl0aMOtyUdjNfHsU_rLydfDkb0NfKdf
+To start the Jupyter notebook, simply run:
+
+```bash
+./run.sh
+```
+
+Open the URL provided by the terminal to open the notebook and begin!
+
+Note that if the Jupyter notebook does not have access to a GPU, there may still be one line of setup to complete (unconfirmed). Try running `./setup/setup_nvidia.sh` to install the [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-docker).
+
+### Manual (virtualenv, not recommended)
+
+You should additionally [install Tensorflow 2](https://www.tensorflow.org/install/gpu), following instructions for GPU support.
+
+Please use Python 3.6 at the latest. You can specify which Python version to use when making a virtualenv with the `--python=path/to/python` argument.
+
+#### Setup
+
+```bash
+./setup/setup.sh
+```
+
+#### Run
+
+```bash
+sh jupyter_colab.sh
+```
+
+Or run Jupyter directly:
+```bash
+source env/bin/activate
+jupyter notebook
+```
+
+You can then use the Jupyter notebook that should have opened to navigate to the `build_model_relative.ipynb` file and begin!
+
+Optionally, a Jupyter Colab can be used to connect to the given URL. This is not recommended.
+
+## Check for GPU compatibility
+
+To ensure your machine is able to detect a GPU, try running:
+
+```bash
+docker run --gpus all nvidia/cuda:10.0-base nvidia-smi
+```
+
+It should output information about your GPU, including a driver version, CUDA version, and hardware info (eg. GeForce GTX 1080).
+
+Note that the Jupyter notebook being run should also have a GPU test to confirm whether or not Tensorflow has access to a GPU.
+
+## Installing CUDA manually (not recommended)
+
+Another option is to install CUDA manually in order for Tensorflow to be able to make use of your GPU. See, and run, `./setup/install_cuda.sh` for a starting point. Please note that this script is not complete. Installing CUDA is difficult and error prone, and I highly recommend the Docker approach (for Linux).

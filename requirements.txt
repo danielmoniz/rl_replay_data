@@ -2,6 +2,5 @@ carball
 numpy
 pandas
 matplotlib
-tensorflow==2.0
 notebook
 jupyter_http_over_ws
