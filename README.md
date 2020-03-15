@@ -41,7 +41,7 @@ To start the Jupyter notebook, simply run:
 
 Open the URL provided by the terminal to open the notebook and begin!
 
-Note that if the Jupyter notebook does not have access to a GPU, there may still be one line of setup to complete (unconfirmed). Try running `./setup_nvidia.sh` to install the [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-docker).
+Note that if the Jupyter notebook does not have access to a GPU, there may still be one line of setup to complete (unconfirmed). Try running `./setup/setup_nvidia.sh` to install the [nvidia-container-toolkit](https://github.com/NVIDIA/nvidia-docker).
 
 ### Manual (virtualenv, not recommended)
 
@@ -52,7 +52,7 @@ Please use Python 3.6 at the latest. You can specify which Python version to use
 #### Setup
 
 ```bash
-./setup.sh
+./setup/setup.sh
 ```
 
 #### Run
@@ -85,4 +85,4 @@ Note that the Jupyter notebook being run should also have a GPU test to confirm 
 
 ## Installing CUDA manually (not recommended)
 
-Another option is to install CUDA manually in order for Tensorflow to be able to make use of your GPU. See, and run, `./install_cuda.sh` for a starting point. Please note that this script is not complete. Installing CUDA is difficult and error prone, and I highly recommend the Docker approach (for Linux).
+Another option is to install CUDA manually in order for Tensorflow to be able to make use of your GPU. See, and run, `./setup/install_cuda.sh` for a starting point. Please note that this script is not complete. Installing CUDA is difficult and error prone, and I highly recommend the Docker approach (for Linux).
