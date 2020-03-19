@@ -1,0 +1,3 @@
+[submodule "TrainingDataExtractor"]
+	path = TrainingDataExtractor
+	url = git@github.com:oxrock/TrainingDataExtractor.git
