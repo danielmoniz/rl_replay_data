@@ -1,5 +1,7 @@
 # rl_replay_data
-Replay data for Rocket League
+Parse Rocket League replays in order to build bots using Machine Learning models.
+
+Clone this project and additionally run `git submodule init`.
 
 ## Parse replays
 
